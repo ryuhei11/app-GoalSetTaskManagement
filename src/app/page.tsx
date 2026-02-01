@@ -399,7 +399,8 @@ const getDeadlineColor = (deadline: string) => {
 
   const diff = (dueDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24);
 
-  if (diff < 0) return '#8b0000';
-  if (diff === 1) return '#ff0000';
+  if (diff < 0) return '#8b0000'; // 期限切れ
+  if (diff === 0) return '#ff0000'; // 本日
+  if (diff === 1) return '#deb887'; // 明日
   return '#2f4f4f';
 };
